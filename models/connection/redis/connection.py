@@ -1,11 +1,11 @@
 from redis import Redis
-from connections_options import connection_options
+from .connections_options import connection_options
 
 class RedisConnectionHandle:
     def __init__(self):
-        self.__host = connection_options["host"]
-        self.__port = connection_options["port"]
-        self.__db = connection_options["db"]
+        self.__host = connection_options["HOST"]
+        self.__port = connection_options["PORT"]
+        self.__db = connection_options["DB"]
         self.__connection = None
     
     def connect(self) -> Redis:
