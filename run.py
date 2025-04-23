@@ -9,3 +9,5 @@ redis_repository.insert("key1", "value1")
 
 
 
+value = redis_repository.get("key1")
+print(value)  # Output: value1

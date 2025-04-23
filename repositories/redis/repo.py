@@ -10,3 +10,7 @@ class RedisRepository:
 
     def insert(self, key: str, value: any) -> None:
         self.__redis_connection.set(key, value)
+        
+    def get(self, key: str) -> any:
+        value = self.__redis_connection.get(key).decode("utf-8")
+        return value
