@@ -10,7 +10,10 @@ class RedisRepository:
 
     def insert(self, key: str, value: any) -> None:
         self.__redis_connection.set(key, value)
-        
+    # TTL
+    def insert_expire(self, key: str, value: any, expire: int) -> None:
+        self.__redis_connection.set(key, value, ex=expire)
+    
     def get(self, key: str) -> any:
         value = self.__redis_connection.get(key).decode("utf-8")
         return value
